@@ -1,0 +1,4 @@
+2022-03-16 01:19:08,749 INFO server.py A connection has been established with the client at ('127.0.0.1', 53406)
+2022-03-16 01:19:08,750 DEBUG server.py Message has been received: {'action': 'presence', 'time': 1647382748.7499332, 'user': {'ACCOUNT_NAME': 'Guest'}, 'encoding': 'utf-8'}
+2022-03-16 01:19:08,750 DEBUG server.py Check message from client: {'action': 'presence', 'time': 1647382748.7499332, 'user': {'ACCOUNT_NAME': 'Guest'}, 'encoding': 'utf-8'}
+2022-03-16 01:19:08,750 DEBUG server.py Response to client {'response': 200}

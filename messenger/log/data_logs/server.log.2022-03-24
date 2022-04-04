@@ -1,0 +1,15 @@
+2022-03-24 23:03:58,798 INFO server.py The server is running, the port for connections: 7777, the address from which connections are accepted: . If the address is not specified, connections from any addresses are accepted.
+2022-03-24 23:09:45,134 INFO server.py A connection has been established with ('127.0.0.1', 64379)
+2022-03-24 23:09:45,642 INFO server.py Client ('127.0.0.1', 64379) disconnected from the server.
+2022-03-24 23:10:07,457 INFO server.py A connection has been established with ('127.0.0.1', 64497)
+2022-03-24 23:10:07,457 INFO server.py Client ('127.0.0.1', 64497) disconnected from the server.
+2022-03-24 23:10:49,922 DEBUG decors.py Function called: arg_parser with parameters (), {}Calling from the module: __main__
+2022-03-24 23:10:49,922 INFO server.py The server is running, the port for connections: 7777, the address from which connections are accepted: . If the address is not specified, connections from any addresses are accepted.
+2022-03-24 23:10:49,948 INFO server.py A connection has been established with ('127.0.0.1', 64716)
+2022-03-24 23:10:49,948 INFO server.py Client ('127.0.0.1', 64716) disconnected from the server.
+2022-03-24 23:10:49,966 INFO server.py A connection has been established with ('127.0.0.1', 64717)
+2022-03-24 23:10:49,966 INFO server.py Client ('127.0.0.1', 64717) disconnected from the server.
+2022-03-24 23:10:49,967 INFO server.py A connection has been established with ('127.0.0.1', 64718)
+2022-03-24 23:10:49,967 INFO server.py Client ('127.0.0.1', 64718) disconnected from the server.
+2022-03-24 23:10:49,975 INFO server.py A connection has been established with ('127.0.0.1', 64719)
+2022-03-24 23:10:49,975 INFO server.py Client ('127.0.0.1', 64719) disconnected from the server.
