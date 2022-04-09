@@ -63,3 +63,31 @@
 2022-03-29 23:26:18,143 DEBUG decors.py Function called: create_exit_message with parameters ('listen',), {}Calling from the module: __main__
 2022-03-29 23:26:18,144 INFO client.py Completion of work on the user's command.
 2022-03-29 23:26:18,649 DEBUG decors.py Function called: user_interactive with parameters (<socket.socket fd=444, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 49991), raddr=('127.0.0.1', 7777)>, 'listen'), {}Calling from the module: __main__
+2022-04-09 03:31:04,741 DEBUG decors.py Function called: arg_parser with parameters (), {}Calling from the module: __main__
+2022-04-09 03:31:04,742 INFO client.py The client with the parameters is running: server address - 127.0.0.1, port - 7777, operating mode - listen
+2022-04-09 03:31:04,743 INFO client.py Create message: presence from user Guest
+2022-04-09 03:31:04,743 DEBUG decors.py Function called: create_presence with parameters (), {}Calling from the module: __main__
+2022-04-09 03:31:04,747 DEBUG decors.py Function called: arg_parser with parameters (), {}Calling from the module: __main__
+2022-04-09 03:31:04,747 INFO client.py The client with the parameters is running: server address - 127.0.0.1, port - 7777, operating mode - send
+2022-04-09 03:31:04,748 INFO client.py Create message: presence from user Guest
+2022-04-09 03:31:04,748 DEBUG decors.py Function called: create_presence with parameters (), {}Calling from the module: __main__
+2022-04-09 03:31:04,760 DEBUG decors.py Function called: arg_parser with parameters (), {}Calling from the module: __main__
+2022-04-09 03:31:04,760 INFO client.py The client with the parameters is running: server address - 127.0.0.1, port - 7777, operating mode - send
+2022-04-09 03:31:04,761 INFO client.py Create message: presence from user Guest
+2022-04-09 03:31:04,761 DEBUG decors.py Function called: create_presence with parameters (), {}Calling from the module: __main__
+2022-04-09 03:31:04,761 DEBUG client.py Server response: {'response': 200}
+2022-04-09 03:31:04,761 DEBUG decors.py Function called: arg_parser with parameters (), {}Calling from the module: __main__
+2022-04-09 03:31:04,761 DEBUG decors.py Function called: process_ans with parameters ({'response': 200},), {}Calling from the module: __main__
+2022-04-09 03:31:04,761 INFO client.py A connection to the server has been established. Server response: 200 : OK
+2022-04-09 03:31:04,761 INFO client.py The client with the parameters is running: server address - 127.0.0.1, port - 7777, operating mode - listen
+2022-04-09 03:31:04,762 INFO client.py Create message: presence from user Guest
+2022-04-09 03:31:04,762 DEBUG decors.py Function called: create_presence with parameters (), {}Calling from the module: __main__
+2022-04-09 03:31:04,812 DEBUG client.py Server response: {'response': 400, 'error': 'Имя пользователя уже занято.'}
+2022-04-09 03:31:04,812 DEBUG decors.py Function called: process_ans with parameters ({'response': 400, 'error': 'Имя пользователя уже занято.'},), {}Calling from the module: __main__
+2022-04-09 03:31:04,812 INFO client.py A connection to the server has been established. Server response: 400 : Имя пользователя уже занято.
+2022-04-09 03:31:04,840 DEBUG client.py Server response: {'response': 400, 'error': 'Имя пользователя уже занято.'}
+2022-04-09 03:31:04,840 DEBUG decors.py Function called: process_ans with parameters ({'response': 400, 'error': 'Имя пользователя уже занято.'},), {}Calling from the module: __main__
+2022-04-09 03:31:04,840 INFO client.py A connection to the server has been established. Server response: 400 : Имя пользователя уже занято.
+2022-04-09 03:31:04,867 DEBUG client.py Server response: {'response': 400, 'error': 'Имя пользователя уже занято.'}
+2022-04-09 03:31:04,867 DEBUG decors.py Function called: process_ans with parameters ({'response': 400, 'error': 'Имя пользователя уже занято.'},), {}Calling from the module: __main__
+2022-04-09 03:31:04,867 INFO client.py A connection to the server has been established. Server response: 400 : Имя пользователя уже занято.
