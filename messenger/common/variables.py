@@ -38,6 +38,9 @@ BAD_REQUEST = 'BAD_REQUEST'
 # Уровень логирования
 LOGGING_LEVEL = logging.DEBUG
 
+# База данных
+SERVER_DATABASE = 'sqlite:///server_base.sql3'
+
 # Ответы сервера
 RESPONSE_200 = {RESPONSE: 200}
 RESPONSE_400 = {
