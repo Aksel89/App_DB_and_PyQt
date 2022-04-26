@@ -91,3 +91,9 @@
 2022-04-09 03:31:04,867 DEBUG client.py Server response: {'response': 400, 'error': 'Имя пользователя уже занято.'}
 2022-04-09 03:31:04,867 DEBUG decors.py Function called: process_ans with parameters ({'response': 400, 'error': 'Имя пользователя уже занято.'},), {}Calling from the module: __main__
 2022-04-09 03:31:04,867 INFO client.py A connection to the server has been established. Server response: 400 : Имя пользователя уже занято.
+2022-04-25 02:23:33,567 DEBUG decors.py Function called: arg_parser with parameters (), {}Calling from the module: __main__
+2022-04-25 02:23:33,569 INFO client.py The client with the parameters is running: server address - 127.0.0.1, port - 7777, operating mode - listen
+2022-04-25 02:30:38,074 DEBUG decors.py Function called: arg_parser with parameters (), {}Calling from the module: __main__
+2022-04-25 02:30:38,076 INFO client.py The client with the parameters is running: server address - 127.0.0.1, port - 7777, operating mode - listen
+2022-04-25 02:33:45,120 DEBUG decors.py Function called: arg_parser with parameters (), {}Calling from the module: __main__
+2022-04-25 02:33:45,122 INFO client.py The client with the parameters is running: server address - 127.0.0.1, port - 7777, operating mode - listen

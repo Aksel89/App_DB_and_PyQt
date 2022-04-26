@@ -1,5 +1,6 @@
 import dis
 
+
 # Метакласс, выполняющий базовую проверку класса «Сервер»
 class ServerVerifier(type):
     def __init__(self, classname, bases, classdict):
