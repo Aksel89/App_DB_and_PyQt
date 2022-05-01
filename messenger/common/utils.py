@@ -1,6 +1,6 @@
 import json
 from common.variables import MAX_PACKAGE_LENGTH, ENCODING
-from errors import *
+from common.errors import *
 
 
 def get_message(client):

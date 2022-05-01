@@ -1,0 +1,11 @@
+2022-04-25 02:00:13,561 DEBUG decors.py Function called: arg_parser with parameters ('7777', 'localhost'), {}Calling from the module: __main__
+2022-04-25 02:02:11,701 DEBUG decors.py Function called: arg_parser with parameters ('7777', 'localhost'), {}Calling from the module: __main__
+2022-04-25 02:03:13,781 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-04-25 02:04:04,453 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-04-25 02:04:57,507 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-04-25 02:07:41,777 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-04-25 02:08:33,856 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-04-25 02:10:41,463 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-04-25 02:11:13,231 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-04-25 02:12:33,766 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-04-25 02:21:48,931 DEBUG decors.py Function called: arg_parser with parameters ('',), {}Calling from the module: __main__

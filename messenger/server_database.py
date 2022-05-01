@@ -259,7 +259,7 @@ if __name__ == '__main__':
     test_db = ServerStorage('server_base.db3')
     test_db.user_login('user1', '192.168.50.10', 5550)
     test_db.user_login('user2', '192.168.50.88', 5555)
-    test_db.user_login('user3', '192.168.1.132', 4556)
+    test_db.user_login('user3', '192.168.50.1', 4556)
     # выводим список кортежей - активных пользователей
     print(test_db.active_users_list())
     # выполянем 'отключение' пользователя

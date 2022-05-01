@@ -1,5 +1,7 @@
 import logging
 import sys
+import log.config_server_log
+import log.config_client_log
 
 if sys.argv[0].find('client') == -1:
     LOGGER = logging.getLogger('server')

@@ -19,7 +19,7 @@ from server_database import ServerStorage
 from server_gui import MainWindow, gui_create_model, HistoryWindow, create_stat_model, ConfigWindow
 
 sys.path.append(os.path.join(os.getcwd(), '..'))
-from decors import log
+from messenger.common.decors import log
 
 LOGGER = getLogger('server')
 # Флаг что был подключён новый пользователь, нужен чтобы не мучать BD
@@ -29,11 +29,11 @@ conflag_lock = threading.Lock()
 
 
 @log
-def arg_parser(default_port, default_address) -> object:
+def arg_parser(default_port, default_address):
     """Парсер аргументов коммандной строки"""
     parser = argparse.ArgumentParser()
-    parser.add_argument('-p', default=DEFAULT_PORT, type=int, nargs='?')
-    parser.add_argument('-a', default='', nargs='?')
+    parser.add_argument('-p', default=default_port, type=int, nargs='?')
+    parser.add_argument('-a', default=default_address, nargs='?')
     namespace = parser.parse_args(sys.argv[1:])
     listen_address = namespace.a
     listen_port = namespace.p
@@ -80,6 +80,7 @@ class Server(Thread, metaclass=ServerVerifier):
 
     def run(self):
         # Инициализация Сокета
+        global new_connect
         self.init_socket()
 
         # Основной цикл программы сервера
@@ -117,6 +118,8 @@ class Server(Thread, metaclass=ServerVerifier):
                                 del self.names[name]
                                 break
                         self.clients.remove(client_with_message)
+                        with conflag_lock:
+                            new_connect = True
 
             # Если есть сообщения, обрабатываем их.
             for message in self.messages:
@@ -127,6 +130,8 @@ class Server(Thread, metaclass=ServerVerifier):
                     self.clients.remove(self.names[message[DESTINATION]])
                     self.database.user_logout(message[DESTINATION])
                     del self.names[message[DESTINATION]]
+                    with conflag_lock:
+                        new_connect = True
             self.messages.clear()
 
     # Адресная отправка сообщений. Принимает словарь сообщение, список зарегистрированых пользователей
@@ -144,7 +149,7 @@ class Server(Thread, metaclass=ServerVerifier):
     # Обработчик сообщений от клиентов, принимает словарь - сообщение от клиента, проверяет корректность, отправляет
     # словарь-ответ в случае необходимости.
     def process_client_message(self, message, client):
-        global new_connection
+        global new_connect
         LOGGER.debug(f'Checking the message from the client : {message}')
         # Если это сообщение о присутствии, принимаем и отвечаем
         if ACTION in message and message[ACTION] == PRESENCE and TIME in message and USER in message:
@@ -155,7 +160,7 @@ class Server(Thread, metaclass=ServerVerifier):
                 self.database.user_login(message[USER][ACCOUNT_NAME], client_ip, client_port)
                 send_message(client, RESPONSE_200)
                 with conflag_lock:
-                    new_connection = True
+                    new_connect = True
             else:
                 response = RESPONSE_400
                 response[ERROR] = 'Имя пользователя уже занято.'
@@ -179,7 +184,7 @@ class Server(Thread, metaclass=ServerVerifier):
             self.names[message[ACCOUNT_NAME]].close()
             del self.names[message[ACCOUNT_NAME]]
             with conflag_lock:
-                new_connection = True
+                new_connect = True
             return
 
         # Если это запрос контакт-листа
@@ -217,28 +222,29 @@ class Server(Thread, metaclass=ServerVerifier):
             return
 
 
-def print_help():
-    print('Поддерживаемые комманды:')
-    print('users - список известных пользователей')
-    print('connected - список подключенных пользователей')
-    print('loghist - история входов пользователя')
-    print('exit - завершение работы сервера.')
-    print('help - вывод справки по поддерживаемым командам')
+# Загрузка файла конфигурации
+def config_load():
+    config = configparser.ConfigParser()
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    config.read(f"{dir_path}/{'server.ini'}")
+    # Если конфиг файл загружен правильно, запускаемся, иначе конфиг по умолчанию.
+    if 'SETTINGS' in config:
+        return config
+    else:
+        config.add_section('SETTINGS')
+        config.set('SETTINGS', 'default_port', str(DEFAULT_PORT))
+        config.set('SETTINGS', 'listen_address', '')
+        config.set('SETTINGS', 'database_path', '')
+        config.set('SETTINGS', 'database_file', 'server_base.db3')
+        return config
 
 
 def main():
     # Загрузка файла конфигурации сервера
-    config = configparser.ConfigParser()
-
-    dir_path = os.path.dirname(os.path.realpath(__file__))
-    config.read(f"{dir_path}/{'server.ini'}")
+    config = config_load()
 
     # Загрузка параметров командной строки, если нет параметров, то задаём значения по умоланию.
-    listen_address = arg_parser(
-        config['SETTINGS']['listen_address'])
-
-    listen_port = arg_parser(
-        config['SETTINGS']['default_port'])
+    listen_address, listen_port = arg_parser(config['SETTINGS']['Default_port'], config['SETTINGS']['Listen_Address'])
 
     # Инициализация базы данных
     database = ServerStorage(
@@ -264,14 +270,14 @@ def main():
     # Функция обновляющяя список подключённых, проверяет флаг подключения, и
     # если надо обновляет список
     def list_update():
-        global new_connection
-        if new_connection:
+        global new_connect
+        if new_connect:
             main_window.active_clients_table.setModel(
                 gui_create_model(database))
             main_window.active_clients_table.resizeColumnsToContents()
             main_window.active_clients_table.resizeRowsToContents()
             with conflag_lock:
-                new_connection = False
+                new_connect = False
 
     # Функция создающяя окно со статистикой клиентов
     def show_statistics():

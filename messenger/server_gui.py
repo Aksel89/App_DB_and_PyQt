@@ -213,7 +213,6 @@ if __name__ == '__main__':
     test_list.appendRow([QStandardItem('4'), QStandardItem('5'), QStandardItem('6')])
     ex.active_clients_table.setModel(test_list)
     ex.active_clients_table.resizeColumnsToContents()
-    print('jhfgjhgf')
     print('END')
     message = QMessageBox
     dial = ConfigWindow()
