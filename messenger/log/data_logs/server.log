@@ -1,14 +1,137 @@
-2022-04-29 15:07:45,771 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
-2022-04-29 15:07:45,819 INFO server.py The server is running. Port for connections: 7777, the address from which connections are accepted: . If the address is not specified, connections from any addresses are accepted.
-2022-04-29 15:09:06,920 INFO server.py A connection has been established with ('127.0.0.1', 55607)
-2022-04-29 15:09:06,920 DEBUG server.py Checking the message from the client : {'action': 'presence', 'time': 1651234146.9201984, 'user': {'ACCOUNT_NAME': 'listen'}}
-2022-04-29 15:09:07,444 DEBUG server.py Checking the message from the client : {'action': 'get_users', 'time': 1651234146.9331987, 'ACCOUNT_NAME': 'listen'}
-2022-04-29 15:09:07,946 DEBUG server.py Checking the message from the client : {'action': 'get_contacts', 'time': 1651234147.4516518, 'user': 'listen'}
-2022-04-29 15:09:17,577 DEBUG server.py Checking the message from the client : {'action': 'get_users', 'time': 1651234157.5472834, 'ACCOUNT_NAME': 'listen'}
-2022-04-29 15:09:18,078 DEBUG server.py Checking the message from the client : {'action': 'get_users', 'time': 1651234157.869794, 'ACCOUNT_NAME': 'listen'}
-2022-04-29 15:09:19,611 DEBUG server.py Checking the message from the client : {'action': 'add', 'time': 1651234159.3968334, 'user': 'listen', 'ACCOUNT_NAME': ''}
-2022-04-29 15:09:27,188 DEBUG server.py Checking the message from the client : {'action': 'remove', 'time': 1651234167.029623, 'user': 'listen', 'ACCOUNT_NAME': ''}
-2022-04-29 15:09:35,829 DEBUG server.py Checking the message from the client : {'action': 'message', 'sender': 'listen', 'to': 'user3', 'time': 1651234175.5294409, 'mess_text': '123'}
-2022-04-29 15:09:35,836 ERROR server.py The user user3 is not registered on the server, sending the message is not possible.
-2022-04-29 15:12:11,141 DEBUG server.py Checking the message from the client : {'action': 'remove', 'time': 1651234330.2790616, 'user': 'listen', 'ACCOUNT_NAME': 'user1'}
-2022-04-29 15:13:26,371 INFO server.py Client ('127.0.0.1', 55607) disconnected from the server.
+2022-05-01 14:21:42,521 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-05-01 14:23:32,556 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-05-01 17:04:31,171 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-05-02 15:07:14,328 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 15:07:14,329 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 15:07:14,334 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-05-02 15:07:14,335 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/ovchinnikov.admin/Desktop/python_projects/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 15:07:14,338 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 15:07:14,382 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-02 15:13:06,881 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 15:13:06,882 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 15:13:06,883 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-05-02 15:13:06,883 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/ovchinnikov.admin/Desktop/python_projects/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 15:13:06,887 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 15:13:06,937 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-02 15:14:11,130 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 15:14:11,130 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 15:14:11,131 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-05-02 15:14:11,131 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/ovchinnikov.admin/Desktop/python_projects/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 15:14:11,134 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 15:14:11,180 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-02 21:47:29,733 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 21:47:29,734 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 21:47:29,734 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-05-02 21:47:29,734 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 21:47:29,736 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 21:47:29,775 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-02 21:52:26,600 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 21:52:26,600 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 21:52:26,601 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-05-02 21:52:26,601 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 21:52:26,603 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 21:52:26,623 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-02 22:07:16,279 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 22:07:16,279 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 22:07:16,280 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-05-02 22:07:16,280 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 22:07:16,282 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 22:07:16,321 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-02 22:17:04,912 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 22:17:04,912 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 22:17:04,913 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-05-02 22:17:04,913 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 22:17:04,915 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 22:17:04,950 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-02 22:31:51,298 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 22:31:51,298 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 22:31:51,299 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-05-02 22:31:51,299 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 22:31:51,302 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 22:31:51,339 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-02 23:34:23,903 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 23:34:23,903 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 23:34:23,904 DEBUG decors.py Function called: arg_parser with parameters ('7777', 'localhost'), {}Calling from the module: __main__
+2022-05-02 23:34:23,904 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 23:34:23,907 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 23:34:23,941 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: localhost. Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-02 23:35:21,479 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 23:35:21,479 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 23:35:21,479 DEBUG decors.py Function called: arg_parser with parameters ('7777', 'localhost'), {}Calling from the module: __main__
+2022-05-02 23:35:21,480 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 23:35:21,482 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 23:35:21,501 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: localhost. Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-02 23:37:52,319 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 23:37:52,319 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 23:37:52,320 DEBUG decors.py Function called: arg_parser with parameters ('7777', 'localhost'), {}Calling from the module: __main__
+2022-05-02 23:37:52,320 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 23:37:52,322 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 23:37:52,342 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: localhost. Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-02 23:39:01,669 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 23:39:01,669 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 23:39:01,669 DEBUG decors.py Function called: arg_parser with parameters ('7777', 'localhost'), {}Calling from the module: __main__
+2022-05-02 23:39:01,670 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 23:39:01,672 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 23:39:01,693 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: localhost. Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-02 23:40:00,720 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 23:40:00,721 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 23:40:00,721 DEBUG decors.py Function called: arg_parser with parameters ('7777', 'localhost'), {}Calling from the module: __main__
+2022-05-02 23:40:00,721 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 23:40:00,723 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 23:40:00,744 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: localhost. Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-02 23:42:35,772 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-02 23:42:35,772 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-02 23:42:35,772 DEBUG decors.py Function called: arg_parser with parameters ('7777', 'localhost'), {}Calling from the module: __main__
+2022-05-02 23:42:35,773 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-02 23:42:35,775 DEBUG server.py Аргументы успешно загружены.
+2022-05-02 23:42:35,796 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: localhost. Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-03 00:12:09,774 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-03 00:12:09,774 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-03 00:12:09,775 DEBUG decors.py Function called: arg_parser with parameters ('7777', 'localhost'), {}Calling from the module: __main__
+2022-05-03 00:12:09,775 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-03 00:12:09,778 DEBUG server.py Аргументы успешно загружены.
+2022-05-03 00:12:09,812 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: localhost. Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-03 00:13:49,861 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-03 00:13:49,861 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-03 00:13:49,862 DEBUG decors.py Function called: arg_parser with parameters ('7777', 'localhost'), {}Calling from the module: __main__
+2022-05-03 00:13:49,862 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-03 00:13:49,867 DEBUG server.py Аргументы успешно загружены.
+2022-05-03 00:13:49,915 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: localhost. Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-03 00:14:56,270 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-03 00:14:56,270 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-03 00:14:56,271 DEBUG decors.py Function called: arg_parser with parameters ('7777', 'localhost'), {}Calling from the module: __main__
+2022-05-03 00:14:56,271 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-03 00:14:56,273 DEBUG server.py Аргументы успешно загружены.
+2022-05-03 00:14:56,293 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: localhost. Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-03 01:38:28,901 DEBUG decors.py Function called: main with parameters (), {}Calling from the module: __main__
+2022-05-03 01:38:28,901 DEBUG decors.py Function called: config_load with parameters (), {}Calling from the module: __main__
+2022-05-03 01:38:28,902 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-05-03 01:38:28,902 DEBUG server.py Инициализация парсера аргументов коммандной строки: ['C:/Users/denet/projects/GeekBrains/python/App_DB_and_PyQt/messenger/server.py']
+2022-05-03 01:38:28,904 DEBUG server.py Аргументы успешно загружены.
+2022-05-03 01:38:28,925 INFO core.py Запущен сервер, порт для подключений: 7777 , адрес с которого принимаются подключения: . Если адрес не указан, принимаются соединения с любых адресов.
+2022-05-03 01:38:51,632 INFO core.py Установлено соедение с ПК ('127.0.0.1', 56727)
+2022-05-03 01:38:52,145 DEBUG decors.py Function called: get_message with parameters (<socket.socket fd=1388, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 56727)>,), {}Calling from the module: common.utils
+2022-05-03 01:38:52,145 DEBUG core.py Разбор сообщения от клиента : {'action': 'presence', 'time': 1651531131.6419415, 'user': {'ACCOUNT_NAME': 'user_2', 'pubkey': '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn30hDUVVT6AxiIS5CqTi\nuP/idtKvBvdC6ii/p8y30CeJw+uLXcJAjgCG6aS8qzA3KpmLswFaNqMBeCTcSceJ\nq13VdcZAhyDGv1h3+BfKcY36i3ODJcZTlpYe9ZxdytAS25NQMAhFr8Zr7e95e+wZ\neSzby7Gdm3zpMOiSKIWvnTZf8a0rAqA/0GbJUxIUPZ4VETCXdxUi1CDHpF5kbxyY\n0yeXSeV9gcQC3ZiTVuEI6NrUBiE69LkirCL5NNnhi/W+Hf1qoRreDVctMhW1QLz1\nOL/vWxQNb5nf4E7lCWULMdvoCyn1k3tYjit7DWESeVLNHrHkub4Y/1n8n9YjmYxp\nQQIDAQAB\n-----END PUBLIC KEY-----'}}
+2022-05-03 01:38:52,145 DEBUG core.py Start auth process for {'ACCOUNT_NAME': 'user_2', 'pubkey': '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn30hDUVVT6AxiIS5CqTi\nuP/idtKvBvdC6ii/p8y30CeJw+uLXcJAjgCG6aS8qzA3KpmLswFaNqMBeCTcSceJ\nq13VdcZAhyDGv1h3+BfKcY36i3ODJcZTlpYe9ZxdytAS25NQMAhFr8Zr7e95e+wZ\neSzby7Gdm3zpMOiSKIWvnTZf8a0rAqA/0GbJUxIUPZ4VETCXdxUi1CDHpF5kbxyY\n0yeXSeV9gcQC3ZiTVuEI6NrUBiE69LkirCL5NNnhi/W+Hf1qoRreDVctMhW1QLz1\nOL/vWxQNb5nf4E7lCWULMdvoCyn1k3tYjit7DWESeVLNHrHkub4Y/1n8n9YjmYxp\nQQIDAQAB\n-----END PUBLIC KEY-----'}
+2022-05-03 01:38:52,151 DEBUG core.py Correct username, starting passwd check.
+2022-05-03 01:38:52,152 DEBUG core.py Auth message = {'response': 511, 'bin': '1e5efc436f5cf45287a960b79b13f46e31d97d307da0d950b45622a79d91e006cbc61659e89117cdc88969a147e94dc100d3a636a45d5d649a67e962360991ab'}
+2022-05-03 01:38:52,152 DEBUG decors.py Function called: send_message with parameters (<socket.socket fd=1388, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 56727)>, {'response': 511, 'bin': '1e5efc436f5cf45287a960b79b13f46e31d97d307da0d950b45622a79d91e006cbc61659e89117cdc88969a147e94dc100d3a636a45d5d649a67e962360991ab'}), {}Calling from the module: common.utils
+2022-05-03 01:38:52,153 DEBUG decors.py Function called: get_message with parameters (<socket.socket fd=1388, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 56727)>,), {}Calling from the module: common.utils
+2022-05-03 01:38:52,153 DEBUG decors.py Function called: send_message with parameters (<socket.socket fd=1388, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 56727)>, {'response': 200}), {}Calling from the module: common.utils
+2022-05-03 01:38:52,676 DEBUG decors.py Function called: get_message with parameters (<socket.socket fd=1388, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 56727)>,), {}Calling from the module: common.utils
+2022-05-03 01:38:52,676 DEBUG core.py Разбор сообщения от клиента : {'action': 'get_users', 'time': 1651531132.1544576, 'ACCOUNT_NAME': 'user_2'}
+2022-05-03 01:38:52,678 DEBUG decors.py Function called: send_message with parameters (<socket.socket fd=1388, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 56727)>, {'response': 202, 'data_list': ['user_1', 'user_2', 'user_3']}), {}Calling from the module: common.utils
+2022-05-03 01:38:53,179 DEBUG decors.py Function called: get_message with parameters (<socket.socket fd=1388, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 56727)>,), {}Calling from the module: common.utils
+2022-05-03 01:38:53,179 DEBUG core.py Разбор сообщения от клиента : {'action': 'get_contacts', 'time': 1651531132.6853387, 'user': 'user_2'}
+2022-05-03 01:38:53,182 DEBUG decors.py Function called: send_message with parameters (<socket.socket fd=1388, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 56727)>, {'response': 202, 'data_list': []}), {}Calling from the module: common.utils
+2022-05-03 01:38:53,698 DEBUG decors.py Function called: get_message with parameters (<socket.socket fd=1388, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 56727)>,), {}Calling from the module: common.utils
+2022-05-03 01:38:53,698 DEBUG core.py Getting data from client exception.
+Traceback (most recent call last):
+  File "C:\Users\denet\projects\GeekBrains\python\App_DB_and_PyQt\messenger\server\core.py", line 88, in run
+    get_message(client_with_message), client_with_message)
+  File "C:\Users\denet\projects\GeekBrains\python\App_DB_and_PyQt\messenger\common\decors.py", line 21, in log_saver
+    ret = func_to_log(*args, **kwargs)
+  File "C:\Users\denet\projects\GeekBrains\python\App_DB_and_PyQt\messenger\common\utils.py", line 18, in get_message
+    encoded_response = client.recv(MAX_PACKAGE_LENGTH)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+2022-05-03 01:38:53,700 INFO core.py Клиент ('127.0.0.1', 56727) отключился от сервера.

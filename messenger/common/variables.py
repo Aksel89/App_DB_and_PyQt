@@ -24,7 +24,8 @@ USER = 'user'
 ACCOUNT_NAME = 'ACCOUNT_NAME'
 SENDER = 'sender'
 DESTINATION = 'to'
-
+DATA = 'bin'
+PUBLIC_KEY = 'pubkey'
 
 # Служебные ключи подключений
 PRESENCE = 'presence'
@@ -41,6 +42,7 @@ ADD_CONTACT = 'add'
 USERS_REQUEST = 'get_users'
 RESPONDEFAULT_IP_ADDRESSES = 'respondefault_ip_addresses'
 BAD_REQUEST = 'BAD_REQUEST'
+PUBLIC_KEY_REQUEST = 'pubkey_need'
 
 # Уровень логирования
 LOGGING_LEVEL = logging.DEBUG
@@ -54,7 +56,16 @@ RESPONSE_202 = {
     LIST_INFO: None
 }
 
+RESPONSE_205 = {
+    RESPONSE: 205
+}
+
 RESPONSE_400 = {
     RESPONSE: 400,
     ERROR: None
+}
+
+RESPONSE_511 = {
+    RESPONSE: 511,
+    DATA: None
 }

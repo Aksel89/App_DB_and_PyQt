@@ -1,17 +1,18 @@
-from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, DateTime
+from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, DateTime, Text
 from sqlalchemy.orm import mapper, sessionmaker
-from common.variables import *
 import datetime
-import os
+
 
 # Серверная база данных
 class ServerStorage:
     # Все пользователи
     class AllUsers:
-        def __init__(self, username):
-            self.id = None
+        def __init__(self, username, passwd_hash):
             self.name = username
             self.last_login = datetime.datetime.now()
+            self.passwd_hash = passwd_hash
+            self.id = None
+            self.pubkey = None
 
     # Активные пользователи
     class ActiveUsers:
@@ -56,7 +57,9 @@ class ServerStorage:
         users_table = Table('Users', self.metadata,
                             Column('id', Integer, primary_key=True),
                             Column('name', String, unique=True),
-                            Column('last_login', DateTime)
+                            Column('last_login', DateTime),
+                            Column('passwd_hash', String),
+                            Column('pubkey', Text)
                             )
 
         # Создаем таблицу, где будут отображаться активные пользователи
@@ -111,8 +114,7 @@ class ServerStorage:
         self.session.commit()
 
     # Функция записи входа пользователя в базу
-    def user_login(self, username, ip_address, port):
-        print(username, ip_address, port)
+    def user_login(self, username, ip_address, port, key):
 
         # Проверяем наличие пользователя в базе
         res = self.session.query(self.AllUsers).filter_by(name=username)
@@ -121,12 +123,15 @@ class ServerStorage:
         if res.count():
             user = res.first()
             user.last_login = datetime.datetime.now()
+            if user.pubkey != key:
+                user.pubkey = key
         else:
-            user = self.AllUsers(username)
-            self.session.add(user)
-            self.session.commit()
-            user_in_history = self.UsersHistory(user.id)
-            self.session.add(user_in_history)
+            raise ValueError('Пользователь не зарегистрирован.')
+            # user = self.AllUsers(username)
+            # self.session.add(user)
+            # self.session.commit()
+            # user_in_history = self.UsersHistory(user.id)
+            # self.session.add(user_in_history)
 
         # Создаем запись в таблице активных пользователей
         new_active_user = self.ActiveUsers(user.id, ip_address, port, datetime.datetime.now())
@@ -138,6 +143,46 @@ class ServerStorage:
 
         # Сохраняем все изменения
         self.session.commit()
+
+    def add_user(self, name, passwd_hash):
+        '''
+        Метод регистрации пользователя.
+        Принимает имя и хэш пароля, создаёт запись в таблице статистики.
+        '''
+        user_row = self.AllUsers(name, passwd_hash)
+        self.session.add(user_row)
+        self.session.commit()
+        history_row = self.UsersHistory(user_row.id)
+        self.session.add(history_row)
+        self.session.commit()
+
+    def remove_user(self, name):
+        '''Метод удаляющий пользователя из базы.'''
+        user = self.session.query(self.AllUsers).filter_by(name=name).first()
+        self.session.query(self.ActiveUsers).filter_by(user=user.id).delete()
+        self.session.query(self.LoginHistory).filter_by(name=user.id).delete()
+        self.session.query(self.UsersContacts).filter_by(user=user.id).delete()
+        self.session.query(self.UsersContacts).filter_by(contact=user.id).delete()
+        self.session.query(self.UsersHistory).filter_by(user=user.id).delete()
+        self.session.query(self.AllUsers).filter_by(name=name).delete()
+        self.session.commit()
+
+    def get_hash(self, name):
+        '''Метод получения хэша пароля пользователя.'''
+        user = self.session.query(self.AllUsers).filter_by(name=name).first()
+        return user.passwd_hash
+
+    def get_pubkey(self, name):
+        '''Метод получения публичного ключа пользователя.'''
+        user = self.session.query(self.AllUsers).filter_by(name=name).first()
+        return user.pubkey
+
+    def check_user(self, name):
+        '''Метод проверяющий существование пользователя.'''
+        if self.session.query(self.AllUsers).filter_by(name=name).count():
+            return True
+        else:
+            return False
 
     # Функция записи выхода пользователя
     def user_logout(self, username):
@@ -188,10 +233,10 @@ class ServerStorage:
             return
 
         # Удаляем требуемое
-        print(self.session.query(self.UsersContacts).filter(
+        self.session.query(self.UsersContacts).filter(
             self.UsersContacts.user == user.id,
             self.UsersContacts.contact == contact.id
-        ).delete())
+        ).delete()
         self.session.commit()
 
     # Функция возвращает список известных пользователей со временем последнего входа.
@@ -256,17 +301,16 @@ class ServerStorage:
 
 
 if __name__ == '__main__':
-    test_db = ServerStorage('server_base.db3')
-    test_db.user_login('user1', '192.168.50.10', 5550)
-    test_db.user_login('user2', '192.168.50.88', 5555)
-    test_db.user_login('user3', '192.168.50.1', 4556)
+    test_db = ServerStorage('../server_database.db3')
+    test_db.user_login('user1', '192.168.1.10', 5550, 123456)
+    test_db.user_login('user2', '192.168.1.88', 5555, 123456)
+    test_db.user_login('user3', '192.168.1.1', 4556, 123456)
+    # test_db.user_login('user1', '192.168.50.10', 5550)
+    # test_db.user_login('user2', '192.168.50.88', 5555)
+    # test_db.user_login('user3', '192.168.50.1', 4556)
     # выводим список кортежей - активных пользователей
-    print(test_db.active_users_list())
-    # выполянем 'отключение' пользователя
-    test_db.user_logout('user2')
-    # выводим список активных пользователей
-    print(test_db.active_users_list())
-    # запрашиваем историю входов по пользователю
-    test_db.login_history('user3')
-    # выводим список известных пользователей
     print(test_db.users_list())
+    print(test_db.active_users_list())
+    test_db.process_message('user1', 'user2')
+    print(test_db.message_history())
+          

@@ -1,0 +1,14 @@
+2022-04-29 15:07:45,771 DEBUG decors.py Function called: arg_parser with parameters ('7777', ''), {}Calling from the module: __main__
+2022-04-29 15:07:45,819 INFO server.py The server is running. Port for connections: 7777, the address from which connections are accepted: . If the address is not specified, connections from any addresses are accepted.
+2022-04-29 15:09:06,920 INFO server.py A connection has been established with ('127.0.0.1', 55607)
+2022-04-29 15:09:06,920 DEBUG server.py Checking the message from the client : {'action': 'presence', 'time': 1651234146.9201984, 'user': {'ACCOUNT_NAME': 'listen'}}
+2022-04-29 15:09:07,444 DEBUG server.py Checking the message from the client : {'action': 'get_users', 'time': 1651234146.9331987, 'ACCOUNT_NAME': 'listen'}
+2022-04-29 15:09:07,946 DEBUG server.py Checking the message from the client : {'action': 'get_contacts', 'time': 1651234147.4516518, 'user': 'listen'}
+2022-04-29 15:09:17,577 DEBUG server.py Checking the message from the client : {'action': 'get_users', 'time': 1651234157.5472834, 'ACCOUNT_NAME': 'listen'}
+2022-04-29 15:09:18,078 DEBUG server.py Checking the message from the client : {'action': 'get_users', 'time': 1651234157.869794, 'ACCOUNT_NAME': 'listen'}
+2022-04-29 15:09:19,611 DEBUG server.py Checking the message from the client : {'action': 'add', 'time': 1651234159.3968334, 'user': 'listen', 'ACCOUNT_NAME': ''}
+2022-04-29 15:09:27,188 DEBUG server.py Checking the message from the client : {'action': 'remove', 'time': 1651234167.029623, 'user': 'listen', 'ACCOUNT_NAME': ''}
+2022-04-29 15:09:35,829 DEBUG server.py Checking the message from the client : {'action': 'message', 'sender': 'listen', 'to': 'user3', 'time': 1651234175.5294409, 'mess_text': '123'}
+2022-04-29 15:09:35,836 ERROR server.py The user user3 is not registered on the server, sending the message is not possible.
+2022-04-29 15:12:11,141 DEBUG server.py Checking the message from the client : {'action': 'remove', 'time': 1651234330.2790616, 'user': 'listen', 'ACCOUNT_NAME': 'user1'}
+2022-04-29 15:13:26,371 INFO server.py Client ('127.0.0.1', 55607) disconnected from the server.

@@ -1,8 +1,13 @@
 import json
-from common.variables import MAX_PACKAGE_LENGTH, ENCODING
+import sys
+
+sys.path.append('../')
+from common.variables import *
 from common.errors import *
+from common.decors import log
 
 
+@log
 def get_message(client):
     """
     Функция принимает и декодирует сообщения. Сообщение принимает в байтах --> выдает словарь.
@@ -10,29 +15,24 @@ def get_message(client):
     :param client:
     :return:
     """
-    encoding_response = client.recv(MAX_PACKAGE_LENGTH)
-    if isinstance(encoding_response, bytes):
-        json_response = encoding_response.decode(ENCODING)
-        response = json.loads(json_response)
-        if isinstance(response, dict):
-            return response
-        else:
-            raise IncorrectDataRecivedError
+    encoded_response = client.recv(MAX_PACKAGE_LENGTH)
+    json_response = encoded_response.decode(ENCODING)
+    response = json.loads(json_response)
+    if isinstance(response, dict):
+        return response
     else:
-        raise IncorrectDataRecivedError
+        raise TypeError
 
 
+@log
 def send_message(sock, message):
-    """
-    Функция кодирует и отправляет сообщение.
-    Принимает словарь и отправляет его.
-    :param sock:
-    :param message:
-    :return:
-    """
-    if not isinstance(message, dict):
-        raise NonDictInputError
-
+    '''
+    Функция отправки словарей через сокет.
+    Кодирует словарь в формат JSON и отправляет через сокет.
+    :param sock: сокет для передачи
+    :param message: словарь для передачи
+    :return: ничего не возвращает
+    '''
     js_message = json.dumps(message)
     encoded_message = js_message.encode(ENCODING)
     sock.send(encoded_message)

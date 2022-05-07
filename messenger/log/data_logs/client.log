@@ -261,3 +261,46 @@
 2022-04-29 15:13:26,618 DEBUG transport.py Установлено соединение с сервером
 2022-04-29 15:13:26,619 DEBUG transport.py Сформировано presence сообщение для пользователя listen
 2022-04-29 15:13:31,630 CRITICAL transport.py Потеряно соединение с сервером!
+2022-05-01 14:22:15,462 DEBUG decors.py Function called: arg_parser with parameters (), {}Calling from the module: __main__
+2022-05-01 14:22:15,665 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1 , порт: 7777, имя пользователя: listen
+2022-05-01 14:22:15,722 INFO transport.py Попытка подключения №1
+2022-05-01 14:22:18,762 INFO transport.py Попытка подключения №2
+2022-05-01 14:22:21,789 INFO transport.py Попытка подключения №3
+2022-05-01 14:22:24,830 INFO transport.py Попытка подключения №4
+2022-05-03 01:37:20,642 DEBUG decors.py Function called: arg_parser with parameters (), {}Calling from the module: __main__
+2022-05-03 01:37:20,645 DEBUG client.py Args loaded
+2022-05-03 01:37:32,679 DEBUG client.py Using USERNAME = user_1, PASSWD = 123456.
+2022-05-03 01:37:32,697 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1 , порт: 7777, имя пользователя: user_1
+2022-05-03 01:37:33,065 DEBUG client.py Keys sucsessfully loaded.
+2022-05-03 01:37:33,113 INFO transport.py Попытка подключения №1
+2022-05-03 01:37:36,149 INFO transport.py Попытка подключения №2
+2022-05-03 01:37:39,183 INFO transport.py Попытка подключения №3
+2022-05-03 01:37:42,212 INFO transport.py Попытка подключения №4
+2022-05-03 01:37:45,236 INFO transport.py Попытка подключения №5
+2022-05-03 01:37:48,270 CRITICAL transport.py Не удалось установить соединение с сервером
+2022-05-03 01:38:37,056 DEBUG decors.py Function called: arg_parser with parameters (), {}Calling from the module: __main__
+2022-05-03 01:38:37,058 DEBUG client.py Args loaded
+2022-05-03 01:38:49,546 DEBUG client.py Using USERNAME = user_2, PASSWD = 123456.
+2022-05-03 01:38:49,559 INFO client.py Запущен клиент с парамертами: адрес сервера: 127.0.0.1 , порт: 7777, имя пользователя: user_2
+2022-05-03 01:38:51,603 DEBUG client.py Keys sucsessfully loaded.
+2022-05-03 01:38:51,631 INFO transport.py Попытка подключения №1
+2022-05-03 01:38:51,632 DEBUG transport.py Connection established.
+2022-05-03 01:38:51,632 DEBUG transport.py Starting auth dialog.
+2022-05-03 01:38:51,640 DEBUG transport.py Passwd hash ready: b'32a4adb2a2427a94e9034f119e04ab90c99d57e5f6bba5e7ceaa21c39c3c4e3c0bfedc6449c0c0c0ec7d10addd816d6da3716cc783c1daed8f7a118bd3e08c43'
+2022-05-03 01:38:51,641 DEBUG transport.py Presense message = {'action': 'presence', 'time': 1651531131.6419415, 'user': {'ACCOUNT_NAME': 'user_2', 'pubkey': '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn30hDUVVT6AxiIS5CqTi\nuP/idtKvBvdC6ii/p8y30CeJw+uLXcJAjgCG6aS8qzA3KpmLswFaNqMBeCTcSceJ\nq13VdcZAhyDGv1h3+BfKcY36i3ODJcZTlpYe9ZxdytAS25NQMAhFr8Zr7e95e+wZ\neSzby7Gdm3zpMOiSKIWvnTZf8a0rAqA/0GbJUxIUPZ4VETCXdxUi1CDHpF5kbxyY\n0yeXSeV9gcQC3ZiTVuEI6NrUBiE69LkirCL5NNnhi/W+Hf1qoRreDVctMhW1QLz1\nOL/vWxQNb5nf4E7lCWULMdvoCyn1k3tYjit7DWESeVLNHrHkub4Y/1n8n9YjmYxp\nQQIDAQAB\n-----END PUBLIC KEY-----'}}
+2022-05-03 01:38:51,641 DEBUG decors.py Function called: send_message with parameters (<socket.socket fd=1504, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 56727), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1651531131.6419415, 'user': {'ACCOUNT_NAME': 'user_2', 'pubkey': '-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn30hDUVVT6AxiIS5CqTi\nuP/idtKvBvdC6ii/p8y30CeJw+uLXcJAjgCG6aS8qzA3KpmLswFaNqMBeCTcSceJ\nq13VdcZAhyDGv1h3+BfKcY36i3ODJcZTlpYe9ZxdytAS25NQMAhFr8Zr7e95e+wZ\neSzby7Gdm3zpMOiSKIWvnTZf8a0rAqA/0GbJUxIUPZ4VETCXdxUi1CDHpF5kbxyY\n0yeXSeV9gcQC3ZiTVuEI6NrUBiE69LkirCL5NNnhi/W+Hf1qoRreDVctMhW1QLz1\nOL/vWxQNb5nf4E7lCWULMdvoCyn1k3tYjit7DWESeVLNHrHkub4Y/1n8n9YjmYxp\nQQIDAQAB\n-----END PUBLIC KEY-----'}}), {}Calling from the module: common.utils
+2022-05-03 01:38:51,641 DEBUG decors.py Function called: get_message with parameters (<socket.socket fd=1504, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 56727), raddr=('127.0.0.1', 7777)>,), {}Calling from the module: common.utils
+2022-05-03 01:38:52,153 DEBUG transport.py Server response = {'response': 511, 'bin': '1e5efc436f5cf45287a960b79b13f46e31d97d307da0d950b45622a79d91e006cbc61659e89117cdc88969a147e94dc100d3a636a45d5d649a67e962360991ab'}.
+2022-05-03 01:38:52,153 DEBUG decors.py Function called: send_message with parameters (<socket.socket fd=1504, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 56727), raddr=('127.0.0.1', 7777)>, {'response': 511, 'bin': 'kazOuzg/msnfPI8NuTeY+A==\n'}), {}Calling from the module: common.utils
+2022-05-03 01:38:52,153 DEBUG decors.py Function called: get_message with parameters (<socket.socket fd=1504, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 56727), raddr=('127.0.0.1', 7777)>,), {}Calling from the module: common.utils
+2022-05-03 01:38:52,154 DEBUG transport.py Разбор сообщения от сервера: {'response': 200}
+2022-05-03 01:38:52,154 DEBUG transport.py Запрос списка известных пользователей user_2
+2022-05-03 01:38:52,154 DEBUG decors.py Function called: send_message with parameters (<socket.socket fd=1504, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 56727), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1651531132.1544576, 'ACCOUNT_NAME': 'user_2'}), {}Calling from the module: common.utils
+2022-05-03 01:38:52,154 DEBUG decors.py Function called: get_message with parameters (<socket.socket fd=1504, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 56727), raddr=('127.0.0.1', 7777)>,), {}Calling from the module: common.utils
+2022-05-03 01:38:52,685 DEBUG transport.py Запрос контакт листа для пользователся Thread-1
+2022-05-03 01:38:52,685 DEBUG transport.py Сформирован запрос {'action': 'get_contacts', 'time': 1651531132.6853387, 'user': 'user_2'}
+2022-05-03 01:38:52,685 DEBUG decors.py Function called: send_message with parameters (<socket.socket fd=1504, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 56727), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1651531132.6853387, 'user': 'user_2'}), {}Calling from the module: common.utils
+2022-05-03 01:38:52,685 DEBUG decors.py Function called: get_message with parameters (<socket.socket fd=1504, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 56727), raddr=('127.0.0.1', 7777)>,), {}Calling from the module: common.utils
+2022-05-03 01:38:53,182 DEBUG transport.py Получен ответ {'response': 202, 'data_list': []}
+2022-05-03 01:38:53,182 DEBUG client.py Transport ready.
+2022-05-03 01:38:53,183 DEBUG transport.py Запущен процесс - приёмник собщений с сервера.
