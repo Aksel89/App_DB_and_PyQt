@@ -16,22 +16,23 @@ else:
 def log(func_to_log):
 
     def log_saver(*args, **kwargs):
-        LOGGER.debug(f'Function called: {func_to_log.__name__} with parameters {args}, {kwargs}'                     
-                     f'Calling from the module: {func_to_log.__module__}')
+        LOGGER.debug(f'Function called:{func_to_log.__name__} with parameters '
+                     f'{args}, {kwargs} Calling from the module: '
+                     f'{func_to_log.__module__}')
         ret = func_to_log(*args, **kwargs)
         return ret
     return log_saver
 
 
 def login_required(func):
-    '''
+    """
     Декоратор, проверяющий, что клиент авторизован на сервере.
     Проверяет, что передаваемый объект сокета находится в
     списке авторизованных клиентов.
     За исключением передачи словаря-запроса
     на авторизацию. Если клиент не авторизован,
     генерирует исключение TypeError
-    '''
+    """
 
     def checker(*args, **kwargs):
         # проверяем, что первый аргумент - экземпляр MessageProcessor

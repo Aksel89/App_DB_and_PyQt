@@ -59,7 +59,8 @@ class TestUtils(unittest.TestCase):
 
         test_socket = TestSocket(self.test_message)
         send_message(test_socket, self.test_message)
-        self.assertEqual(test_socket.encoding_message, test_socket.received_message)
+        self.assertEqual(test_socket.encoding_message,
+                         test_socket.received_message)
 
     def test_send_message_bad(self):
 

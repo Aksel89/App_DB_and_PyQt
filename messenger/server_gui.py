@@ -2,7 +2,8 @@ import sys
 import os
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
-from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QApplication, QLabel, QTableView, QDialog, QPushButton, \
+from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QApplication, QLabel, \
+    QTableView, QDialog, QPushButton, \
      QLineEdit, QFileDialog, QMessageBox
 
 
@@ -10,7 +11,8 @@ from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QApplication, QLabel, QT
 def gui_create_model(database):
     list_users = database.active_users_list()
     list_create_model = QStandardItemModel()
-    list_create_model.setHorizontalHeaderLabels(['Имя Клиента', 'IP Адрес', 'Порт', 'Время подключения'])
+    list_create_model.setHorizontalHeaderLabels(['Имя Клиента', 'IP Адрес',
+                                                 'Порт', 'Время подключения'])
     for row in list_users:
         user, ip, port, time = row
         user = QStandardItem(user)
@@ -32,8 +34,10 @@ def create_stat_model(database):
 
     # Объект модели данных:
     list = QStandardItemModel()
-    list.setHorizontalHeaderLabels(['Имя Клиента', 'Последний раз входил',
-                                    'Сообщений отправлено', 'Сообщений получено'])
+    list.setHorizontalHeaderLabels(['Имя Клиента',
+                                    'Последний раз входил',
+                                    'Сообщений отправлено',
+                                    'Сообщений получено'])
     for row in hist_list:
         user, last_seen, sent, recvd = row
         user = QStandardItem(user)
@@ -181,7 +185,9 @@ class ConfigWindow(QDialog):
         self.ip_label.setFixedSize(180, 15)
 
         # Метка с напоминанием о пустом поле.
-        self.ip_label_note = QLabel(' оставьте это поле пустым, чтобы\n принимать соединения с любых адресов.', self)
+        self.ip_label_note = QLabel(' оставьте это поле пустым, чтобы\n '
+                                    'принимать соединения с любых адресов.',
+                                    self)
         self.ip_label_note.move(10, 168)
         self.ip_label_note.setFixedSize(500, 30)
 
@@ -208,9 +214,18 @@ if __name__ == '__main__':
     ex = MainWindow()
     ex.statusBar().showMessage('Test Statusbar Message')
     test_list = QStandardItemModel(ex)
-    test_list.setHorizontalHeaderLabels(['Имя Клиента', 'IP Адрес', 'Порт', 'Время подключения'])
-    test_list.appendRow([QStandardItem('1'), QStandardItem('2'), QStandardItem('3')])
-    test_list.appendRow([QStandardItem('4'), QStandardItem('5'), QStandardItem('6')])
+    test_list.setHorizontalHeaderLabels(['Имя Клиента',
+                                         'IP Адрес',
+                                         'Порт',
+                                         'Время подключения'])
+
+    test_list.appendRow([QStandardItem('1'),
+                         QStandardItem('2'),
+                         QStandardItem('3')])
+
+    test_list.appendRow([QStandardItem('4'),
+                         QStandardItem('5'),
+                         QStandardItem('6')])
     ex.active_clients_table.setModel(test_list)
     ex.active_clients_table.resizeColumnsToContents()
     print('END')

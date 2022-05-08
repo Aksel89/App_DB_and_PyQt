@@ -19,8 +19,8 @@ class ServerVerifier(type):
         # Перебираем ключи словаря с методами и атрибутами
         for func in clsdict:
             try:
-                # Возвращает итератор по инструкциям в предоставленной функции, методе,
-                # строке исходного кода или объекте кода.
+                # Возвращает итератор по инструкциям в предоставленной функции,
+                # методе, строке исходного кода или объекте кода.
                 ret = dis.get_instructions(clsdict[func])
             except TypeError:
                 # Если функция не найдена ловим мсключение
@@ -39,7 +39,8 @@ class ServerVerifier(type):
                             attributes.append(i.argval)
 
         if 'connect' in methods:
-            raise TypeError('Недопустимо использовать метод "connect" в серверном классе')
+            raise TypeError('Недопустимо использовать метод "connect" в '
+                            'серверном классе')
 
         if not ('SOCK_STREAM' in attributes and 'AF_INET' in attributes):
             raise TypeError('Некорректная инициализация сокета')
@@ -54,8 +55,8 @@ class ClientVerifier(type):
         methods = []
         for func in clsdict:
             try:
-                # Возвращает итератор по инструкциям в предоставленной функции, методе,
-                # строке исходного кода или объекте кода.
+                # Возвращает итератор по инструкциям в предоставленной функции,
+                # методе, строке исходного кода или объекте кода.
                 ret = dis.get_instructions(clsdict[func])
             except TypeError:
                 # Если функция не найдена ловим мсключение
@@ -71,7 +72,8 @@ class ClientVerifier(type):
 
         for command in ('accept', 'listen', 'socket'):
             if command in methods:
-                raise TypeError('Присутствует недопустимый, для данного класса, метод')
+                raise TypeError('Присутствует недопустимый, '
+                                'для данного класса, метод')
 
         if 'get_message' in methods or 'send_message' in methods:
             pass

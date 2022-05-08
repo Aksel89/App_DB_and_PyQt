@@ -1,10 +1,9 @@
 import argparse
 import sys
 import os
-#from Cryptodome.PublicKey import RSA
+# from Cryptodome.PublicKey import RSA
 from PyQt5.QtWidgets import QApplication, QMessageBox
 from Crypto.PublicKey import RSA
-
 
 from common.variables import *
 from common.errors import ServerError
@@ -33,14 +32,15 @@ def arg_parser():
     # проверим подходящий номер порта
     if not 1023 < server_port < 65536:
         LOGGER.critical(
-            f'Attempt to launch a client with an incorrect port number: {server_port}. '
-            f'Valid addresses are 1024 to 65535. The client is being terminated.')
+            f'Attempt to launch a client with an incorrect port number: '
+            f'{server_port}. Valid addresses are 1024 to 65535. The client '
+            f'is being terminated.')
         sys.exit(1)
 
     # Проверим допустим ли выбранный режим работы клиента
     # if client_mode not in ('listen', 'send'):
-    #     LOGGER.critical(f'Invalid operation mode is specified {client_mode}, '
-    #                     f'Acceptable modes: listen , send')
+    #     LOGGER.critical(f'Invalid operation mode is specified {client_mode},'
+    #                     f' Acceptable modes: listen , send')
     #     sys.exit(1)
 
     return server_address, server_port, client_name, client_passwd
@@ -60,19 +60,21 @@ if __name__ == '__main__':
     if not client_name or not client_passwd:
 
         client_app.exec_()
-        # Если пользователь ввёл имя и нажал ОК, то сохраняем ведённое и удаляем объект, иначе выходим
+        # Если пользователь ввёл имя и нажал ОК, то сохраняем ведённое и
+        # удаляем объект, иначе выходим
         if start_dialog.ok_pressed:
             client_name = start_dialog.client_name.text()
             client_passwd = start_dialog.client_passwd.text()
-            LOGGER.debug(f'Using USERNAME = {client_name}, PASSWD = {client_passwd}.')
+            LOGGER.debug(
+                f'Using USERNAME = {client_name}, PASSWD = {client_passwd}.')
             del start_dialog
         else:
             exit(0)
 
     # Записываем логи
     LOGGER.info(
-        f'Запущен клиент с парамертами: адрес сервера: {server_address} , порт: {server_port}, '
-        f'имя пользователя: {client_name}')
+        f'Запущен клиент с парамертами: адрес сервера: {server_address}, '
+        f'порт: {server_port}, имя пользователя: {client_name}')
 
     # Загружаем ключи с файла, если же файла нет, то генерируем новую пару.
     dir_path = os.path.dirname(os.path.realpath(__file__))

@@ -20,7 +20,10 @@ class TestClient(unittest.TestCase):
         """
         test = create_presence()
         test[TIME] = 1645387814
-        self.assertEqual(test, {ACTION: PRESENCE, TIME: 1645387814, USER: {ACCOUNT_NAME: 'Guest'}, 'encoding': ENCODING})
+        self.assertEqual(test, {ACTION: PRESENCE,
+                                TIME: 1645387814,
+                                USER: {ACCOUNT_NAME: 'Guest'},
+                                'encoding': ENCODING})
 
     def test_200_ok(self):
 
@@ -28,7 +31,8 @@ class TestClient(unittest.TestCase):
 
     def test_400_bad(self):
 
-        self.assertEqual(process_ans({RESPONSE: 400, ERROR: 'BAD_REQUEST'}), f'400 : {BAD_REQUEST}')
+        self.assertEqual(process_ans({RESPONSE: 400, ERROR: 'BAD_REQUEST'}),
+                         f'400 : {BAD_REQUEST}')
 
     def test_server_error(self):
 

@@ -10,7 +10,8 @@ sys.path.append(os.path.join(os.getcwd(), '..'))
 from common.variables import LOGGING_LEVEL
 
 
-CLIENT_FORMATTER = logging.Formatter('%(asctime)s %(levelname)s %(filename)s %(message)s')
+CLIENT_FORMATTER = logging.Formatter('%(asctime)s %(levelname)s %(filename)s '
+                                     '%(message)s')
 
 
 PATH = os.path.dirname(os.path.abspath(__file__))

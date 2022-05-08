@@ -21,36 +21,53 @@ class TestServer(unittest.TestCase):
     def test_correct_message(self):
 
         self.assertEqual(process_client_message(
-            {ACTION: PRESENCE, TIME: 1645387814, USER: {ACCOUNT_NAME: 'Guest'}, 'encoding': ENCODING}),
-            self.correct_dict)
+            {ACTION: PRESENCE,
+             TIME: 1645387814,
+             USER: {ACCOUNT_NAME: 'Guest'},
+             'encoding': ENCODING}),
+             self.correct_dict)
 
     def test_error_action_message(self):
 
         self.assertEqual(process_client_message(
-            {TIME: 1645387814, USER: {ACCOUNT_NAME: 'Guest'}, 'encoding': ENCODING}),
+            {TIME: 1645387814, USER: {ACCOUNT_NAME: 'Guest'},
+            'encoding': ENCODING}),
             self.error_dict,
         )
 
     def test_incorrect_action_message(self):
 
         self.assertEqual(process_client_message(
-            {ACTION: 'any action', TIME: 1645387814, USER: {ACCOUNT_NAME: 'Guest'}, 'encoding': ENCODING}),
+            {ACTION: 'any action',
+             TIME: 1645387814,
+             USER: {ACCOUNT_NAME: 'Guest'},
+             'encoding': ENCODING}),
             self.error_dict)
 
     def test_message_time_error(self):
 
         self.assertEqual(process_client_message(
-            {ACTION: PRESENCE, USER: {ACCOUNT_NAME: 'Guest'}, 'encoding': ENCODING}), self.error_dict)
+            {ACTION: PRESENCE,
+             USER: {ACCOUNT_NAME: 'Guest'},
+             'encoding': ENCODING}),
+            self.error_dict)
 
     def test_message_user_error(self):
 
         self.assertEqual(process_client_message(
-            {ACTION: PRESENCE, TIME: 1645387814, 'encoding': ENCODING}), self.error_dict)
+            {ACTION: PRESENCE,
+             TIME: 1645387814,
+             'encoding': ENCODING}),
+            self.error_dict)
 
     def test_unregistered_user_message(self):
 
         self.assertEqual(process_client_message(
-            {ACTION: PRESENCE, TIME: 1645387814, USER: {ACCOUNT_NAME: 'test'}, 'encoding': ENCODING}), self.error_dict)
+            {ACTION: PRESENCE,
+             TIME: 1645387814,
+             USER: {ACCOUNT_NAME: 'test'},
+             'encoding': ENCODING}),
+            self.error_dict)
 
 
 if __name__ == '__main__':
